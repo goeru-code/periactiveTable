@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Periactive</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<label style="position: sticky; top: 0; margin-right: 22px;">Periactive Table inWork</label>
+
+<button class="buttongray" onclick="showGas()" id="gas">Gas at roomtemperature</button>
+<button class="buttongray" onclick="showLiquid()" id="liquid">Liquid at roomtemperature</button>
+<button id="solid" class="buttongray" onclick="showSolid()">Solid at roomtemperature</button>
+<button class="buttonblack" onclick="showAll()" id="all">All known elements</button>
+
+<body>
+    <div class="grid-container">
+        <div id="H" class="grid-item">H</div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="grid-item">He</div>
+        <div class="grid-item">Li</div>
+        <div class="grid-item">Be</div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="grid-item">B</div>
+        <div class="grid-item">C</div>
+        <div class="grid-item">N</div>
+        <div class="grid-item">O</div>
+        <div class="grid-item">F</div>
+        <div class="grid-item">Ne</div>
+
+        <div class="grid-item">Na</div>
+        <div class="grid-item">Mg</div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="grid-item">XY</div>
+        <div class="grid-item">XY</div>
+        <div class="grid-item">XY</div>
+        <div class="grid-item">XY</div>
+        <div class="grid-item">XY</div>
+        <div class="grid-item">XY</div>
+        <div class="grid-item">XY</div>
+        <div class="grid-item">XY</div>
+        <div class="grid-item">XY</div>
+        <div class="grid-item">XY</div>
+        <div class="grid-item">XY</div>
+        <div class="grid-item">XY</div>
+        <div class="grid-item">XY</div>
+        <div class="grid-item">XY</div>
+        <div class="grid-item">XY</div>
+        <div class="grid-item">XY</div>
+        <div class="grid-item">XY</div>
+        <div class="grid-item">XY</div>
+        <div class="grid-item">XY</div>
+        <div class="grid-item">XY</div>
+        <div class="grid-item">XY</div>
+        <div class="grid-item">XY</div>
+        <div class="grid-item">XY</div>
+        <div class="grid-item">XY</div>
+        <div class="grid-item">XY</div>
+        <div class="grid-item">XY</div>
+        <div class="grid-item">XY</div>
+        <div class="grid-item">XY</div>
+        <div class="grid-item">XY</div>
+        <div class="grid-item">XY</div>
+        <div class="grid-item">XY</div>
+        <div class="grid-item">XY</div>
+        <div class="grid-item">XY</div>
+        <div class="grid-item">XY</div>
+        <div class="grid-item">XY</div>
+        <div class="grid-item">XY</div>
+        <div class="grid-item">XY</div>
+        <div class="grid-item">XY</div>
+        <div class="grid-item">XY</div>
+        <div class="grid-item">XY</div>
+        <div class="grid-item">XY</div>
+        <div class="grid-item">XY</div>
+        <div class="grid-item">XY</div>
+        <div class="grid-item">XY</div>
+        <div class="grid-item">XY</div>
+        <div class="grid-item">XY</div>
+        <div class="grid-item">XY</div>
+        <div class="grid-item">XY</div>
+        <div class="grid-item">XY</div>
+        <div class="grid-item">XY</div>
+        <div class="grid-item">XY</div>
+        <div class="grid-item">XY</div>
+        <div class="grid-item">XY</div>
+        <div class="grid-item">XY</div>
+        <div class="grid-item">XY</div>
+        <div class="grid-item">XY</div>
+        <div class="grid-item">XY</div>
+        <div class="grid-item">XY</div>
+        <div class="grid-item">XY</div>
+        <div class="grid-item">XY</div>
+        <div class="grid-item">XY</div>
+        <div class="grid-item">XY</div>
+        <div class="grid-item">XY</div>
+        <div class="grid-item">XY</div>
+        <div class="grid-item">Fr</div>
+        <div class="grid-item">Ra</div>
+        <div class="grid-item">f block 2</div>
+        <div class="grid-item">Lr</div>
+        <div class="grid-item">Rf</div>
+        <div class="grid-item">Db</div>
+        <div class="grid-item">Sg</div>
+        <div class="grid-item">Bh</div>
+        <div class="grid-item">Hs</div>
+        <div class="grid-item">Mt</div>
+        <div class="grid-item">Ds</div>
+        <div class="grid-item">Rg</div>
+        <div class="grid-item">Cn</div>
+        <div class="grid-item">Nh</div>
+        <div class="grid-item">Fl</div>
+        <div class="grid-item">Mc</div>
+        <div class="grid-item">Lv</div>
+        <div class="grid-item">Ts</div>
+        <div class="grid-item">Og</div>
+
+    </div>
+</body>
+<script src="periactive.js"></script>
+
+</html>
