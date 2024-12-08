@@ -56,10 +56,20 @@ p {
     font-family: monospace;
 }
 
- .default {
+ .default-div {
+    background-color: #99CCFF;
+    border: 2px solid black;
+    padding: 10px;
     color: black;
 } 
 
  .grayElement {
 color: gray;
 } 
+
+.special-div {
+    background-color: green;
+    border: 2px solid green;
+    padding: 10px;
+    color: white;
+  }
