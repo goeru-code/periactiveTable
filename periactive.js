@@ -1,41 +1,56 @@
-       function showGas() {
-           // elements gas at roomtemp.
-           const divElement = document.getElementById("H");
-           divElement.style = "default-div";
-           
+       function showGas() {        
            const button = document.getElementById("gas");
-           button.style.backgroundColor = "black";
+           button.style.backgroundColor = "darkblue";
            const button1 = document.getElementById("liquid");
            button1.style.backgroundColor = "lightgrey";
            const button2 = document.getElementById("all");
            button2.style.backgroundColor = "lightgrey";
            const button3 = document.getElementById("solid");
            button3.style.backgroundColor = "lightgrey";
+
+           const gridContainer = document.querySelector('.grid-container');
+           const divs = gridContainer.querySelectorAll('div');
+           divs.forEach(div => {
+            if (div.getAttribute('data-element') == "gas") {
+            div.style.backgroundColor = "darkblue"; div.style.color = "white";}
+            else if (div.getAttribute('data-element') == "solid")  {
+               div.style.backgroundColor = "lightgray";
+               div.style.color = "gray";
+            }
+            else if (div.getAttribute('data-element') == "liquid")  {
+                div.style.backgroundColor = "lightgray";
+                div.style.color = "gray";
+             }
+           });
        }
 
        function showLiquid() {
-           // elements liquid at roomtemp.
-          const myElement = document.getElementById('H');
-           myElement.style.color = "gray";
-           myElement.style.backgroundColor = "lightgray";
-           myElement.style.border = "0px";  
-
            const button4 = document.getElementById("gas");
            button4.style.backgroundColor = "lightgray";
            const button5 = document.getElementById("liquid");
-           button5.style.backgroundColor = "black";
+           button5.style.backgroundColor = "darkblue";
            const button6 = document.getElementById("all");
            button6.style.backgroundColor = "lightgray";
            const button7 = document.getElementById("solid");
            button7.style.backgroundColor = "lightgray";
+
+           const gridContainer = document.querySelector('.grid-container');
+           const divs = gridContainer.querySelectorAll('div');
+           divs.forEach(div => {
+            if (div.getAttribute('data-element') == "liquid") {
+            div.style.backgroundColor = "darkblue"; div.style.color = "white";}
+            else if (div.getAttribute('data-element') == "solid")  {
+               div.style.backgroundColor = "lightgray";
+               div.style.color = "gray";
+            }
+            else if (div.getAttribute('data-element') == "gas")  {
+                div.style.backgroundColor = "lightgray";
+                div.style.color = "gray";
+             }
+            });
        }
 
        function showSolid() {
-           // elements solid at roomtemp.
-           const myElement = document.getElementById('H');
-           myElement.style.color = "gray";
-           myElement.style.backgroundColor = "lightgray";
-           myElement.style.border = "0px";
            const button12 = document.getElementById("gas");
            button12.style.backgroundColor = "lightgray";
            const button13 = document.getElementById("liquid");
@@ -43,7 +58,22 @@
            const button14 = document.getElementById("all");
            button14.style.backgroundColor = "lightgray";
            const button15 = document.getElementById("solid");
-           button15.style.backgroundColor = "black";
+           button15.style.backgroundColor = "darkblue";
+
+           const gridContainer = document.querySelector('.grid-container');
+           const divs = gridContainer.querySelectorAll('div');
+           divs.forEach(div => {
+            if (div.getAttribute('data-element') == "solid") {
+            div.style.backgroundColor = "darkblue"; div.style.color = "white";}
+            else if (div.getAttribute('data-element') == "liquid")  {
+               div.style.backgroundColor = "lightgray";
+               div.style.color = "gray";
+            }
+            else if (div.getAttribute('data-element') == "gas")  {
+                div.style.backgroundColor = "lightgray";
+                div.style.color = "gray";
+             }
+            });
        }
 
        function showAll() {

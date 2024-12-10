@@ -15,7 +15,7 @@
 <body>
     <p></p> <br> <p></p>
     <div class="grid-container">
-        <div id="H" class="grid-item">H<br>Hydrogen</div>
+        <div id="H" class="grid-item" data-element="gas">H<br>Hydrogen<br>1</div>
         <div class="void"></div>
         <div class="void"></div>
         <div class="void"></div>
@@ -33,9 +33,9 @@
         <div class="void"></div>
         <div class="void"></div>
         <div class="void"></div>
-        <div id="He" class="grid-item">He<br>Helium</div>
-        <div class="grid-item">Li<br>Lithium</div>
-        <div class="grid-item">Be<br>Beryllium</div>
+        <div id="He" class="grid-item" data-element="gas">He<br>Helium<br>2</div>
+        <div class="grid-item" data-element="solid">Li<br>Lithium<br>3</div>
+        <div class="grid-item" data-element="solid">Be<br>Beryllium<br>4</div>
         <div class="void"></div>
         <div class="void"></div>
         <div class="void"></div>
@@ -47,15 +47,14 @@
         <div class="void"></div>
         <div class="void"></div>
         <div class="void"></div>
-        <div class="grid-item">B<br>Boron</div>
-        <div class="grid-item">C<br>Carbon</div>
-        <div class="grid-item">N<br>Nitrogen</div>
-        <div class="grid-item">O<br>Oxygen</div>
-        <div class="grid-item">F<br>Fluorine</div>
-        <div class="grid-item">Ne<br>Neon</div>
-
-        <div class="grid-item">Na<br>Sodium</div>
-        <div class="grid-item">Mg<br>Magnesium</div>
+        <div class="grid-item" data-element="solid">B<br>Boron</div>
+        <div class="grid-item" data-element="solid">C<br>Carbon</div>
+        <div class="grid-item" data-element="gas">N<br>Nitrogen</div>
+        <div class="grid-item" data-element="gas">O<br>Oxygen</div>
+        <div class="grid-item" data-element="gas">F<br>Fluorine</div>
+        <div class="grid-item" data-element="gas">Ne<br>Neon<br>10</div>
+        <div class="grid-item" data-element="solid">Na<br>Sodium<br>11</div>
+        <div class="grid-item" data-element="solid">Mg<br>Magnesium</div>
         <div class="void"></div>
         <div class="void"></div>
         <div class="void"></div>
@@ -67,85 +66,88 @@
         <div class="void"></div>
         <div class="void"></div>
         <div class="void"></div>
-        <div class="grid-item">Aluminum</div>
-        <div class="grid-item">Si</div>
-        <div class="grid-item">P</div>
-        <div class="grid-item">Cl</div>
-        <div class="grid-item">Ar</div>
-        <div class="grid-item">K</div>
-        <div class="grid-item">Ca</div>
-        <div class="grid-item">XY</div>
-        <div class="grid-item">XY</div>
-        <div class="grid-item">XY</div>
-        <div class="grid-item">XY</div>
-        <div class="grid-item">XY</div>
-        <div class="grid-item">XY</div>
-        <div class="grid-item">XY</div>
-        <div class="grid-item">XY</div>
-        <div class="grid-item">XY</div>
-        <div class="grid-item">XY</div>
-        <div class="grid-item">XY</div>
-        <div class="grid-item">XY</div>
-        <div class="grid-item">XY</div>
-        <div class="grid-item">XY</div>
-        <div class="grid-item">XY</div>
-        <div class="grid-item">XY</div>
-        <div class="grid-item">XY</div>
-        <div class="grid-item">XY</div>
-        <div class="grid-item">XY</div>
-        <div class="grid-item">XY</div>
-        <div class="grid-item">XY</div>
-        <div class="grid-item">XY</div>
-        <div class="grid-item">XY</div>
-        <div class="grid-item">XY</div>
-        <div class="grid-item">XY</div>
-        <div class="grid-item">XY</div>
-        <div class="grid-item">XY</div>
-        <div class="grid-item">XY</div>
-        <div class="grid-item">XY</div>
-        <div class="grid-item">XY</div>
-        <div class="grid-item">XY</div>
-        <div class="grid-item">XY</div>
-        <div class="grid-item">XY</div>
-        <div class="grid-item">XY</div>
-        <div class="grid-item">XY</div>
-        <div class="grid-item">XY</div>
-        <div class="grid-item">XY</div>
-        <div class="grid-item">XY</div>
-        <div class="grid-item">XY</div>
-        <div class="grid-item">XY</div>
-        <div class="grid-item">XY</div>
-        <div class="grid-item">XY</div>
-        <div class="grid-item">XY</div>
-        <div class="grid-item">XY</div>
-        <div class="grid-item">XY</div>
-        <div class="grid-item">XY</div>
-        <div class="grid-item">XY</div>
-        <div class="grid-item">XY</div>
-        <div class="grid-item">XY</div>
-        <div class="grid-item">XY</div>
-        <div class="grid-item">XY</div>
-        <div class="grid-item">Fr</div>
-        <div class="grid-item">Ra</div>
-        <div class="grid-item">f block 2</div>
-        <div class="grid-item">Lr</div>
-        <div class="grid-item">Rf</div>
-        <div class="grid-item">Db</div>
-        <div class="grid-item">Sg</div>
-        <div class="grid-item">Bh</div>
-        <div class="grid-item">Hs</div>
-        <div class="grid-item">Mt</div>
-        <div class="grid-item">Ds</div>
-        <div class="grid-item">Rg</div>
-        <div class="grid-item">Cn</div>
-        <div class="grid-item">Nh</div>
-        <div class="grid-item">Fl</div>
-        <div class="grid-item">Mc</div>
-        <div class="grid-item">Lv</div>
-        <div class="grid-item">Ts</div>
-        <div class="grid-item">Og</div>
+        <div class="grid-item" data-element="solid">Al<br>Aluminum</div>
+        <div class="grid-item" data-element="solid">Si<br>Silicon</div>
+        <div class="grid-item" data-element="solid">P<br>Phosphorus</div>
+        <div class="grid-item" data-element="solid">S<br>Sulfur</div>
+        <div class="grid-item" data-element="gas">Cl<br>Chlorine</div>
+        <div class="grid-item" data-element="gas">Ar<br>Argon<br>18</div>
+        <div class="grid-item" data-element="solid">K<br>Potassium</div>
+        <div class="grid-item" data-element="solid">Ca<br>Calcium</div>
         <div class="void"></div>
+        <div class="grid-item" data-element="solid">Sc<br>Scandium</div>
+        <div class="grid-item" data-element="solid">Ti<br>Titanium</div>
+        <div class="grid-item" data-element="solid">V<br>Vanadium</div>
+        <div class="grid-item" data-element="solid">Cr<br>Chromium</div>
+        <div class="grid-item" data-element="solid">Mn<br>Manganese</div>
+        <div class="grid-item" data-element="solid">Fe<br>Iron</div>
+        <div class="grid-item" data-element="solid">Co<br>Cobalt</div>
+        <div class="grid-item" data-element="solid">Ni<br>Nickel</div>
+        <div class="grid-item" data-element="solid">Cu<br>Copper</div>
+        <div class="grid-item" data-element="solid">Zn<br>Zinc</div>
+        <div class="grid-item" data-element="solid">Ga<br>Gallium</div>
+        <div class="grid-item" data-element="solid">Ge<br>Germanium</div>
+        <div class="grid-item" data-element="solid">As<br>Arsenic</div>
+        <div class="grid-item" data-element="solid">Se<br>Selenium</div>
+        <div class="grid-item" data-element="liquid">Br<br>Bromine</div>
+        <div class="grid-item" data-element="gas">Kr<br>Krypton<br>36</div>
+        <div class="grid-item" data-element="solid">Rb<br>Rubidium</div>
+        <div class="grid-item" data-element="solid">Sr<br>Strontium</div>
         <div class="void"></div>
+        <div class="grid-item" data-element="solid">Y</div>
+        <div class="grid-item" data-element="solid">Zr</div>
+        <div class="grid-item" data-element="solid">Nb</div>
+        <div class="grid-item" data-element="solid">Mo</div>
+        <div class="grid-item" data-element="solid">Tc</div>
+        <div class="grid-item" data-element="solid">Ru</div>
+        <div class="grid-item" data-element="solid">Rh</div>
+        <div class="grid-item" data-element="solid">Pd</div>
+        <div class="grid-item" data-element="solid">Ag</div>
+        <div class="grid-item" data-element="solid">Cd</div>
+        <div class="grid-item" data-element="solid">In</div>
+        <div class="grid-item" data-element="solid">Sn</div>
+        <div class="grid-item" data-element="solid">Sb</div>
+        <div class="grid-item" data-element="solid">Te</div>
+        <div class="grid-item" data-element="solid">I<br>Iodine</div>
+        <div class="grid-item" data-element="gas">Xe<br>Xenon<br>54</div>
+        <div class="grid-item" data-element="solid">Cs<br>Caesium</div>
+        <div class="grid-item" data-element="solid">Ba<br>Barium</div>
+        <div class="grid-item" data-element="solid">f block 1<br>57-70</div>
+        <div class="grid-item" data-element="solid">Lu<br>Manganese</div>
+        <div class="grid-item" data-element="solid">Hf<br>Manganese</div>
+        <div class="grid-item" data-element="solid">Ta<br>Manganese</div>
+        <div class="grid-item" data-element="solid">W<br>Manganese</div>
+        <div class="grid-item" data-element="solid">Re<br>Manganese</div>
+        <div class="grid-item" data-element="solid">Os<br>Manganese</div>
+        <div class="grid-item" data-element="solid">Ir<br>Manganese</div>
+        <div class="grid-item" data-element="solid">Pt<br>Manganese</div>
+        <div class="grid-item" data-element="solid">Au<br>Manganese</div>
+        <div class="grid-item" data-element="liquid">Hg<br>Mercury</div>
+        <div class="grid-item" data-element="solid">Tl<br>Manganese</div>
+        <div class="grid-item" data-element="solid">Pb<br>Manganese</div>
+        <div class="grid-item" data-element="solid">Bi<br>Manganese</div>
+        <div class="grid-item" data-element="solid">Po<br>Manganese</div>
+        <div class="grid-item" data-element="solid">At<br>Manganese</div>
+        <div class="grid-item" data-element="gas">Rn<br>Radon</div>
+        <div class="grid-item" data-element="solid">Fr<br>Francium<br>87</div>
+        <div class="grid-item" data-element="solid">Ra<br>Radium<br>88</div>
+        <div class="grid-item" data-element="solid">f block 2<br>89-102</div>
+        <div class="grid-item" data-element="solid">Lr<br>Lawrencium<br>103</div>
+        <div class="grid-item" data-element="solid">Rf<br>Rutherfordium<br>104</div>
+        <div class="grid-item" data-element="solid">Db<br>Dubnium<br></div>
+        <div class="grid-item" data-element="solid">Sg<br>Seaborgium<br></div>
+        <div class="grid-item" data-element="solid">Bh<br>Bohrium</div>
+        <div class="grid-item" data-element="solid">Hs<br>aaaaa</div>
+        <div class="grid-item" data-element="solid">Mt<br>aaaaa</div>
+        <div class="grid-item" data-element="solid">Ds<br>aaaa</div>
+        <div class="grid-item" data-element="solid">Rg<br>aaaaa</div>
+        <div class="grid-item" data-element="solid">Cn<br>aaaaa</div>
+        <div class="grid-item" data-element="solid">Nh<br>Nihonium</div>
+        <div class="grid-item" data-element="solid">Fl<br>Flerovium</div>
+        <div class="grid-item" data-element="solid">Mc<br>Moscovium</div>
+        <div class="grid-item" data-element="solid">Lv<br>Livermorium</div>
+        <div class="grid-item" data-element="solid">Ts<br>Tennessine</div>
+        <div class="grid-item" data-element="solid">Og<br>Oganesson<br>118</div>
         <div class="void"></div>
         <div class="void"></div>
         <div class="void"></div>
@@ -167,15 +169,42 @@
         <div class="void"></div>
         <div class="void"></div>
         <div class="void"></div>
+        
+        <div class="grid-item" data-element="solid">La<br>Lanthanum<br>57</div>
+        <div class="grid-item" data-element="solid">Ce<br>Cerium</div>
+        <div class="grid-item" data-element="solid">Pr<br>Cerium</div>
+        <div class="grid-item" data-element="solid">Nd<br>Cerium</div>
+        <div class="grid-item" data-element="solid">Pm<br>Cerium</div>
+        <div class="grid-item" data-element="solid">Sm<br>Cerium</div>
+        <div class="grid-item" data-element="solid">Eu<br>Cerium</div>
+        <div class="grid-item" data-element="solid">Gd<br>Cerium</div>
+        <div class="grid-item" data-element="solid">Tb<br>Cerium</div>
+        <div class="grid-item" data-element="solid">Dy<br>todo</div>
+        <div class="grid-item" data-element="solid">Ho<br>todo</div>
+        <div class="grid-item" data-element="solid">Er<br>todo</div>
+        <div class="grid-item" data-element="solid">Tm<br>todo</div>
+        <div class="grid-item" data-element="solid">Yb<br>Ytterbium<br>70</div>
         <div class="void"></div>
         <div class="void"></div>
         <div class="void"></div>
         <div class="void"></div>
         <div class="void"></div>
-
-        <div class="grid-item">La</div>
-        <div class="grid-item">Ce</div>
-
+        
+        
+        <div class="grid-item" data-element="solid">Ac<br>Actinium<br>89</div>
+        <div class="grid-item" data-element="solid">Th<br>todo</div>
+        <div class="grid-item" data-element="solid">Pa<br>todo</div>
+        <div class="grid-item" data-element="solid">U<br>todo</div>
+        <div class="grid-item" data-element="solid">Np<br>todo</div>
+        <div class="grid-item" data-element="solid">Pu<br>todo</div>
+        <div class="grid-item" data-element="solid">Am<br>todo</div>
+        <div class="grid-item" data-element="solid">Cm<br>todo</div>
+        <div class="grid-item" data-element="solid">Bk<br>todo</div>
+        <div class="grid-item" data-element="solid">Cf<br>todo</div>
+        <div class="grid-item" data-element="solid">Es<br>todo</div>
+        <div class="grid-item" data-element="solid">Fm<br>todo</div>
+        <div class="grid-item" data-element="solid">Md<br>todo</div>
+        <div class="grid-item" data-element="solid">No<br>Nobelium<br>102</div>
     </div>
 </body>
 <script src="periactive.js"></script>
