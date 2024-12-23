@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>P-T</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<label style="position: sticky; top: 0; margin-right: 22px;">Periactive Table v0.1 ### github.com/goeru-code/periactiveTable</label>
+<br><br>
+<button class="buttongray" onclick="showGas()" id="gas">Gas at roomtemperature</button>
+<button class="buttongray" onclick="showLiquid()" id="liquid">Liquid at roomtemperature</button>
+<button id="solid" class="buttongray" onclick="showSolid()">Solid at roomtemperature</button>
+<button id="nature" class="buttongray" onclick="showNature()">Existing in nature</button>
+<button class="buttonblack" onclick="showAll()" id="all">All known elements</button>
+
+<body>
+    <p></p> <br> <p></p>
+    <div class="grid-container">
+        <div id="H" class="grid-item" data-element="gas" nature="y">H<br>Hydrogen<br>1</div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div id="He" class="grid-item" data-element="gas" nature="y">He<br>Helium<br>2</div>
+        <div class="grid-item" data-element="solid" nature="y">Li<br>Lithium<br>3</div>
+        <div class="grid-item" data-element="solid" nature="y">Be<br>Beryllium<br>4</div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="grid-item" data-element="solid" nature="y">B<br>Boron<br>5</div>
+        <div class="grid-item" data-element="solid" nature="y">C<br>Carbon<br>6</div>
+        <div class="grid-item" data-element="gas" nature="y">N<br>Nitrogen<br>7</div>
+        <div class="grid-item" data-element="gas" nature="y">O<br>Oxygen<br>8</div>
+        <div class="grid-item" data-element="gas" nature="y">F<br>Fluorine<br>9</div>
+        <div class="grid-item" data-element="gas" nature="y">Ne<br>Neon<br>10</div>
+        <div class="grid-item" data-element="solid" nature="y">Na<br>Sodium<br>11</div>
+        <div class="grid-item" data-element="solid" nature="y">Mg<br>Magnesium<br>12</div>  
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="grid-item" data-element="solid" nature="y">Al<br>Aluminum<br>13</div>
+        <div class="grid-item" data-element="solid" nature="y">Si<br>Silicon<br>14</div>
+        <div class="grid-item" data-element="solid" nature="y">P<br>Phosphorus<br>15</div>
+        <div class="grid-item" data-element="solid" nature="y">S<br>Sulfur<br>16</div>
+        <div class="grid-item" data-element="gas" nature="y">Cl<br>Chlorine<br>17</div>
+        <div class="grid-item" data-element="gas" nature="y" >Ar<br>Argon<br>18</div>
+        <div class="grid-item" data-element="solid" nature="y">K<br>Potassium<br>19</div>
+        <div class="grid-item" data-element="solid" nature="y">Ca<br>Calcium<br>20</div>
+        <div class="void"></div>
+        <div class="grid-item" data-element="solid" nature="y">Sc<br>Scandium<br>21</div>
+        <div class="grid-item" data-element="solid" nature="y">Ti<br>Titanium<br>22</div>
+        <div class="grid-item" data-element="solid" nature="y">V<br>Vanadium<br>23</div>
+        <div class="grid-item" data-element="solid" nature="y">Cr<br>Chromium<br>24</div>
+        <div class="grid-item" data-element="solid" nature="y">Mn<br>Manganese<br>25</div>
+        <div class="grid-item" data-element="solid" nature="y">Fe<br>Iron<br>26</div>
+        <div class="grid-item" data-element="solid" nature="y">Co<br>Cobalt<br>27</div>
+        <div class="grid-item" data-element="solid" nature="y">Ni<br>Nickel<br>28</div>
+        <div class="grid-item" data-element="solid" nature="y">Cu<br>Copper<br>29</div>
+        <div class="grid-item" data-element="solid" nature="y">Zn<br>Zinc<br>30</div>
+        <div class="grid-item" data-element="solid" nature="y">Ga<br>Gallium<br>31</div>
+        <div class="grid-item" data-element="solid" nature="y">Ge<br>Germanium<br>32</div>
+        <div class="grid-item" data-element="solid" nature="y">As<br>Arsenic<br>33</div>
+        <div class="grid-item" data-element="solid" nature="y">Se<br>Selenium<br>34</div>
+        <div class="grid-item" data-element="liquid" nature="y">Br<br>Bromine<br>35</div>
+        <div class="grid-item" data-element="gas" nature="y">Kr<br>Krypton<br>36</div>
+        <div class="grid-item" data-element="solid" nature="y">Rb<br>Rubidium<br>37</div>
+        <div class="grid-item" data-element="solid" nature="y">Sr<br>Strontium<br>38</div>
+        <div class="void"></div>
+        <div class="grid-item" data-element="solid" nature="y">Y<br>Yttrium<br>39</div>
+        <div class="grid-item" data-element="solid" nature="y">Zr<br>Zirconium<br>40</div>
+        <div class="grid-item" data-element="solid" nature="y">Nb<br>Niobium<br>41</div>
+        <div class="grid-item" data-element="solid" nature="y">Mo<br>Molybdenum<br>42</div>
+        <div class="grid-item" data-element="solid" nature="y">Tc<br>Technetium<br>43</div>
+        <div class="grid-item" data-element="solid" nature="y">Ru<br>Ruthenium<br>44</div>
+        <div class="grid-item" data-element="solid" nature="y">Rh<br>Rhodium<br>45</div>
+        <div class="grid-item" data-element="solid" nature="y">Pd<br>Palladium<br>46</div>
+        <div class="grid-item" data-element="solid" nature="y">Ag<br>Silver<br>47</div>
+        <div class="grid-item" data-element="solid" nature="y">Cd<br>Cadmium<br>48</div>
+        <div class="grid-item" data-element="solid" nature="y">In<br>Indium<br>49</div>
+        <div class="grid-item" data-element="solid" nature="y">Sn<br>Tin<br>50</div>
+        <div class="grid-item" data-element="solid" nature="y">Sb<br>Antimony<br>51</div>
+        <div class="grid-item" data-element="solid" nature="y">Te<br>Tellurium<br>52</div>
+        <div class="grid-item" data-element="solid" nature="y">I<br>Iodine<br>53</div>
+        <div class="grid-item" data-element="gas" nature="y">Xe<br>Xenon<br>54</div>
+        <div class="grid-item" data-element="solid" nature="y">Cs<br>Caesium<br>55</div>
+        <div class="grid-item" data-element="solid" nature="y">Ba<br>Barium<br>56</div>
+        <div class="grid-item" data-element="solid" nature="y">f block 1<br>57-70</div>
+        <div class="grid-item" data-element="solid" nature="y">Lu<br>Lutetium<br>71</div>
+        <div class="grid-item" data-element="solid" nature="y">Hf<br>Hafnium<br>72</div>
+        <div class="grid-item" data-element="solid" nature="y">Ta<br>Tantalum<br>73</div>
+        <div class="grid-item" data-element="solid" nature="y">W<br>Tungsten<br>74</div>
+        <div class="grid-item" data-element="solid" nature="y">Re<br>Rhenium<br>75</div>
+        <div class="grid-item" data-element="solid" nature="y">Os<br>Osmium<br>76</div>
+        <div class="grid-item" data-element="solid" nature="y">Ir<br>Iridium<br>77</div>
+        <div class="grid-item" data-element="solid" nature="y">Pt<br>Platinum<br>78</div>
+        <div class="grid-item" data-element="solid" nature="y">Au<br>Gold<br>79</div>
+        <div class="grid-item" data-element="liquid" nature="y">Hg<br>Mercury<br>80</div>
+        <div class="grid-item" data-element="solid" nature="y">Tl<br>Thallium<br>81</div>
+        <div class="grid-item" data-element="solid" nature="y">Pb<br>Lead<br>82</div>
+        <div class="grid-item" data-element="solid" nature="y">Bi<br>Bismuth<br>83</div>
+        <div class="grid-item" data-element="solid" nature="y">Po<br>Polonium<br>84</div>
+        <div class="grid-item" data-element="solid" nature="y">At<br>Astatine<br>85</div>
+        <div class="grid-item" data-element="gas" nature="y">Rn<br>Radon<br>86</div>
+        <div class="grid-item" data-element="solid" nature="y">Fr<br>Francium<br>87</div>
+        <div class="grid-item" data-element="solid" nature="y">Ra<br>Radium<br>88</div>
+        <div class="grid-item" data-element="solid">f block 2<br>89-102</div>
+        <div class="grid-item" data-element="solid">Lr<br>Lawrencium<br>103</div>
+        <div class="grid-item" data-element="solid">Rf<br>Rutherfordium<br>104</div>
+        <div class="grid-item" data-element="solid">Db<br>Dubnium<br>105</div>
+        <div class="grid-item" data-element="solid">Sg<br>Seaborgium<br>106</div>
+        <div class="grid-item" data-element="solid">Bh<br>Bohrium<br>107</div>
+        <div class="grid-item" data-element="solid">Hs<br>Hassium<br>108</div>
+        <div class="grid-item" data-element="solid">Mt<br>Meitnerium<br>109</div>
+        <div class="grid-item" data-element="solid">Ds<br>Darmstadtium<br>110</div>
+        <div class="grid-item" data-element="solid">Rg<br>Roentgenium<br>111</div>
+        <div class="grid-item" data-element="solid">Cn<br>Copernicium<br>112</div>
+        <div class="grid-item" data-element="solid">Nh<br>Nihonium<br>113</div>
+        <div class="grid-item" data-element="solid">Fl<br>Flerovium<br>114</div>
+        <div class="grid-item" data-element="solid">Mc<br>Moscovium<br>115</div>
+        <div class="grid-item" data-element="solid">Lv<br>Livermorium<br>116</div>
+        <div class="grid-item" data-element="solid">Ts<br>Tennessine<br>117</div>
+        <div class="grid-item" data-element="solid">Og<br>Oganesson<br>118</div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        
+        <div class="grid-item" data-element="solid" nature="y">La<br>Lanthanum<br>57</div>
+        <div class="grid-item" data-element="solid" nature="y">Ce<br>Cerium<br>58</div>
+        <div class="grid-item" data-element="solid" nature="y">Pr<br>Praseodymnium<br>59</div>
+        <div class="grid-item" data-element="solid" nature="y">Nd<br>Neodymium<br>60</div>
+        <div class="grid-item" data-element="solid" nature="y">Pm<br>Promethium<br>61</div>
+        <div class="grid-item" data-element="solid" nature="y">Sm<br>Samarium<br>62</div>
+        <div class="grid-item" data-element="solid" nature="y">Eu<br>Europium<br>63</div>
+        <div class="grid-item" data-element="solid" nature="y">Gd<br>Gadolinium<br>64</div>
+        <div class="grid-item" data-element="solid" nature="y">Tb<br>Terbium<br>65</div>
+        <div class="grid-item" data-element="solid" nature="y">Dy<br>Dysprosium<br>66</div>
+        <div class="grid-item" data-element="solid" nature="y">Ho<br>Holmium<br>67</div>
+        <div class="grid-item" data-element="solid" nature="y">Er<br>Erbium<br>68</div>
+        <div class="grid-item" data-element="solid" nature="y">Tm<br>Thulium<br>69</div>
+        <div class="grid-item" data-element="solid" nature="y">Yb<br>Ytterbium<br>70</div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        
+        
+        <div class="grid-item" data-element="solid" nature="y">Ac<br>Actinium<br>89</div>
+        <div class="grid-item" data-element="solid" nature="y">Th<br>Thorium<br>90</div>
+        <div class="grid-item" data-element="solid" nature="y">Pa<br>Protactinium<br>91</div>
+        <div class="grid-item" data-element="solid" nature="y">U<br>Uranium<br>92</div>
+        <div class="grid-item" data-element="solid" nature="y">Np<br>Neptunium<br>93</div>
+        <div class="grid-item" data-element="solid" nature="y">Pu<br>Plutonium<br>94</div>
+        <div class="grid-item" data-element="solid">Am<br>Americium<br>95</div>
+        <div class="grid-item" data-element="solid">Cm<br>Curium<br>96</div>
+        <div class="grid-item" data-element="solid">Bk<br>Berkelium<br>97</div>
+        <div class="grid-item" data-element="solid">Cf<br>Californium<br>98</div>
+        <div class="grid-item" data-element="solid">Es<br>Einsteinium<br>99</div>
+        <div class="grid-item" data-element="solid">Fm<br>Fermium<br>100</div>
+        <div class="grid-item" data-element="solid">Md<br>Mendelevium<br>101</div>
+        <div class="grid-item" data-element="solid">No<br>Nobelium<br>102</div> 
+    </div>
+</body>
+<script src="periactive.js"></script>
+
+</html>
