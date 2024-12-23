@@ -5,18 +5,28 @@
     <title>P-T</title>
     <link rel="stylesheet" href="index.css">
 </head>
-<label style="position: sticky; top: 0; margin-right: 22px;">Periactive Table v0.1 ### github.com/goeru-code/periactiveTable</label>
+<label style="position: sticky; top: 0; margin-right: 22px;">Periactive Table v0.2 ### github.com/goeru-code/periactiveTable</label>
 <br><br>
 <button class="buttongray" onclick="showGas()" id="gas">Gas at roomtemperature</button>
 <button class="buttongray" onclick="showLiquid()" id="liquid">Liquid at roomtemperature</button>
 <button id="solid" class="buttongray" onclick="showSolid()">Solid at roomtemperature</button>
 <button id="nature" class="buttongray" onclick="showNature()">Existing in nature</button>
-<button class="buttonblack" onclick="showAll()" id="all">All known elements</button>
+<button class="buttonspacer"></button>
+<button class="buttonblack" onclick="showAll(tempSlider.value)" id="all">Known elements (T)</button>
+<button class="buttonsolid"  id="buttonsolid">Solid</button>
+<button class="buttonliquid"  id="buttonliquid">Liquid</button>
+<button class="buttongas"  id="buttongas">Gas</button>
+<p></p>
 
-<body>
-    <p></p> <br> <p></p>
+<body onload="showAll(tempSlider.value)">
+    <div class="slider-container" onclick="showAll(tempSlider.value)">
+        <input type="range" min="0" max="6300" value="0" class="slider" id="tempSlider">
+      </div>
+      
+      <div id="temperature" style="font-size: 150%">Temperature: 0K</div>
+    <p></p> <br> 
     <div class="grid-container">
-        <div id="H" class="grid-item" data-element="gas" nature="y">H<br>Hydrogen<br>1</div>
+        <div id="1" class="grid-item" data-element="gas" nature="y" melt=14 boil=20>H<br>Hydrogen<br>1</div>
         <div class="void"></div>
         <div class="void"></div>
         <div class="void"></div>
@@ -34,9 +44,9 @@
         <div class="void"></div>
         <div class="void"></div>
         <div class="void"></div>
-        <div id="He" class="grid-item" data-element="gas" nature="y">He<br>Helium<br>2</div>
-        <div class="grid-item" data-element="solid" nature="y">Li<br>Lithium<br>3</div>
-        <div class="grid-item" data-element="solid" nature="y">Be<br>Beryllium<br>4</div>
+        <div id="2" class="grid-item" data-element="gas" nature="y" melt=0 boil=4>He<br>Helium<br>2</div>
+        <div id="3" class="grid-item" data-element="solid" nature="y" melt=454 boil=1603>Li<br>Lithium<br>3</div>
+        <div id="4" class="grid-item" data-element="solid" nature="y" melt=1560 boil=2742>Be<br>Beryllium<br>4</div>
         <div class="void"></div>
         <div class="void"></div>
         <div class="void"></div>
@@ -48,14 +58,14 @@
         <div class="void"></div>
         <div class="void"></div>
         <div class="void"></div>
-        <div class="grid-item" data-element="solid" nature="y">B<br>Boron<br>5</div>
-        <div class="grid-item" data-element="solid" nature="y">C<br>Carbon<br>6</div>
-        <div class="grid-item" data-element="gas" nature="y">N<br>Nitrogen<br>7</div>
-        <div class="grid-item" data-element="gas" nature="y">O<br>Oxygen<br>8</div>
-        <div class="grid-item" data-element="gas" nature="y">F<br>Fluorine<br>9</div>
-        <div class="grid-item" data-element="gas" nature="y">Ne<br>Neon<br>10</div>
-        <div class="grid-item" data-element="solid" nature="y">Na<br>Sodium<br>11</div>
-        <div class="grid-item" data-element="solid" nature="y">Mg<br>Magnesium<br>12</div>  
+        <div id="5" class="grid-item" data-element="solid" nature="y" melt=2349 boil=4200>B<br>Boron<br>5</div>
+        <div id="6" class="grid-item" data-element="solid" nature="y" melt=3800 boil=4300>C<br>Carbon<br>6</div>
+        <div id="7" class="grid-item" data-element="gas" nature="y" melt=63 boil=77>N<br>Nitrogen<br>7</div>
+        <div id="8" class="grid-item" data-element="gas" nature="y" melt=54 boil=90>O<br>Oxygen<br>8</div>
+        <div id="9" class="grid-item" data-element="gas" nature="y" melt=53 boil=85>F<br>Fluorine<br>9</div>
+        <div id="10" class="grid-item" data-element="gas" nature="y" melt=25 boil="27">Ne<br>Neon<br>10</div>
+        <div id="11" class="grid-item" data-element="solid" nature="y" melt=371 boil=1156>Na<br>Sodium<br>11</div>
+        <div id="12" class="grid-item" data-element="solid" nature="y" melt=923 boil=1363>Mg<br>Magnesium<br>12</div>  
         <div class="void"></div>
         <div class="void"></div>
         <div class="void"></div>
@@ -67,94 +77,88 @@
         <div class="void"></div>
         <div class="void"></div>
         <div class="void"></div>
-        <div class="grid-item" data-element="solid" nature="y">Al<br>Aluminum<br>13</div>
-        <div class="grid-item" data-element="solid" nature="y">Si<br>Silicon<br>14</div>
-        <div class="grid-item" data-element="solid" nature="y">P<br>Phosphorus<br>15</div>
-        <div class="grid-item" data-element="solid" nature="y">S<br>Sulfur<br>16</div>
-        <div class="grid-item" data-element="gas" nature="y">Cl<br>Chlorine<br>17</div>
-        <div class="grid-item" data-element="gas" nature="y" >Ar<br>Argon<br>18</div>
-        <div class="grid-item" data-element="solid" nature="y">K<br>Potassium<br>19</div>
-        <div class="grid-item" data-element="solid" nature="y">Ca<br>Calcium<br>20</div>
+        <div id="13" class="grid-item" data-element="solid" nature="y" melt=933 boil=2743>Al<br>Aluminum<br>13</div>
+        <div id="14" class="grid-item" data-element="solid" nature="y" melt=1687 boil=3538>Si<br>Silicon<br>14</div>
+        <div id="15" class="grid-item" data-element="solid" nature="y" melt=317 boil=550>P<br>Phosphorus<br>15</div>
+        <div id="16" class="grid-item" data-element="solid" nature="y" melt=368 boil=718>S<br>Sulfur<br>16</div>
+        <div id="17" class="grid-item" data-element="gas" nature="y" melt=171 boil=239>Cl<br>Chlorine<br>17</div>
+        <div id="18" class="grid-item" data-element="gas" nature="y" melt=84 boil=87>Ar<br>Argon<br>18</div>
+        <div id="19" class="grid-item" data-element="solid" nature="y" melt=337 boil=1032>K<br>Potassium<br>19</div>
+        <div id="20" class="grid-item" data-element="solid" nature="y" melt=1115 boil=1757>Ca<br>Calcium<br>20</div>
         <div class="void"></div>
-        <div class="grid-item" data-element="solid" nature="y">Sc<br>Scandium<br>21</div>
-        <div class="grid-item" data-element="solid" nature="y">Ti<br>Titanium<br>22</div>
-        <div class="grid-item" data-element="solid" nature="y">V<br>Vanadium<br>23</div>
-        <div class="grid-item" data-element="solid" nature="y">Cr<br>Chromium<br>24</div>
-        <div class="grid-item" data-element="solid" nature="y">Mn<br>Manganese<br>25</div>
-        <div class="grid-item" data-element="solid" nature="y">Fe<br>Iron<br>26</div>
-        <div class="grid-item" data-element="solid" nature="y">Co<br>Cobalt<br>27</div>
-        <div class="grid-item" data-element="solid" nature="y">Ni<br>Nickel<br>28</div>
-        <div class="grid-item" data-element="solid" nature="y">Cu<br>Copper<br>29</div>
-        <div class="grid-item" data-element="solid" nature="y">Zn<br>Zinc<br>30</div>
-        <div class="grid-item" data-element="solid" nature="y">Ga<br>Gallium<br>31</div>
-        <div class="grid-item" data-element="solid" nature="y">Ge<br>Germanium<br>32</div>
-        <div class="grid-item" data-element="solid" nature="y">As<br>Arsenic<br>33</div>
-        <div class="grid-item" data-element="solid" nature="y">Se<br>Selenium<br>34</div>
-        <div class="grid-item" data-element="liquid" nature="y">Br<br>Bromine<br>35</div>
-        <div class="grid-item" data-element="gas" nature="y">Kr<br>Krypton<br>36</div>
-        <div class="grid-item" data-element="solid" nature="y">Rb<br>Rubidium<br>37</div>
-        <div class="grid-item" data-element="solid" nature="y">Sr<br>Strontium<br>38</div>
+        <div id="21" class="grid-item" data-element="solid" nature="y" melt=1814 boil=3109>Sc<br>Scandium<br>21</div>
+        <div id="22" class="grid-item" data-element="solid" nature="y" melt=1941 boil=3560>Ti<br>Titanium<br>22</div>
+        <div id="23" class="grid-item" data-element="solid" nature="y" melt=2183 boil=3680>V<br>Vanadium<br>23</div>
+        <div id="24" class="grid-item" data-element="solid" nature="y" melt=2180 boil=2755>Cr<br>Chromium<br>24</div>
+        <div id="25" class="grid-item" data-element="solid" nature="y" melt=1519 boil=2334>Mn<br>Manganese<br>25</div>
+        <div id="26" class="grid-item" data-element="solid" nature="y" melt=1811 boil=3134>Fe<br>Iron<br>26</div>
+        <div id="27" class="grid-item" data-element="solid" nature="y" melt=1768 boil=3200>Co<br>Cobalt<br>27</div>
+        <div id="28" class="grid-item" data-element="solid" nature="y" melt=1728 boil=3003>Ni<br>Nickel<br>28</div>
+        <div id="29" class="grid-item" data-element="solid" nature="y" melt=1358 boil=2835>Cu<br>Copper<br>29</div>
+        <div id="30" class="grid-item" data-element="solid" nature="y" melt=693 boil=1180>Zn<br>Zinc<br>30</div>
+        <div id="31" class="grid-item" data-element="solid" nature="y" melt=303 boil=2673>Ga<br>Gallium<br>31</div>
+        <div id="32" class="grid-item" data-element="solid" nature="y" melt=1211 boil=3106>Ge<br>Germanium<br>32</div>
+        <div id="33" class="grid-item" data-element="solid" nature="y" melt=1090 boil=887>As<br>Arsenic<br>33</div>
+        <div id="34" class="grid-item" data-element="solid" nature="y" melt=494 boil=958>Se<br>Selenium<br>34</div>
+        <div id="35" class="grid-item" data-element="liquid" nature="y" melt=266 boil=332>Br<br>Bromine<br>35</div>
+        <div id="36" class="grid-item" data-element="gas" nature="y" melt=116 boil=120>Kr<br>Krypton<br>36</div>
+        <div id="37" class="grid-item" data-element="solid" nature="y" melt=312 boil=961>Rb<br>Rubidium<br>37</div>
+        <div id="38" class="grid-item" data-element="solid" nature="y" melt=1050 boil=1650>Sr<br>Strontium<br>38</div>
         <div class="void"></div>
-        <div class="grid-item" data-element="solid" nature="y">Y<br>Yttrium<br>39</div>
-        <div class="grid-item" data-element="solid" nature="y">Zr<br>Zirconium<br>40</div>
-        <div class="grid-item" data-element="solid" nature="y">Nb<br>Niobium<br>41</div>
-        <div class="grid-item" data-element="solid" nature="y">Mo<br>Molybdenum<br>42</div>
-        <div class="grid-item" data-element="solid" nature="y">Tc<br>Technetium<br>43</div>
-        <div class="grid-item" data-element="solid" nature="y">Ru<br>Ruthenium<br>44</div>
-        <div class="grid-item" data-element="solid" nature="y">Rh<br>Rhodium<br>45</div>
-        <div class="grid-item" data-element="solid" nature="y">Pd<br>Palladium<br>46</div>
-        <div class="grid-item" data-element="solid" nature="y">Ag<br>Silver<br>47</div>
-        <div class="grid-item" data-element="solid" nature="y">Cd<br>Cadmium<br>48</div>
-        <div class="grid-item" data-element="solid" nature="y">In<br>Indium<br>49</div>
-        <div class="grid-item" data-element="solid" nature="y">Sn<br>Tin<br>50</div>
-        <div class="grid-item" data-element="solid" nature="y">Sb<br>Antimony<br>51</div>
-        <div class="grid-item" data-element="solid" nature="y">Te<br>Tellurium<br>52</div>
-        <div class="grid-item" data-element="solid" nature="y">I<br>Iodine<br>53</div>
-        <div class="grid-item" data-element="gas" nature="y">Xe<br>Xenon<br>54</div>
-        <div class="grid-item" data-element="solid" nature="y">Cs<br>Caesium<br>55</div>
-        <div class="grid-item" data-element="solid" nature="y">Ba<br>Barium<br>56</div>
-        <div class="grid-item" data-element="solid" nature="y">f block 1<br>57-70</div>
-        <div class="grid-item" data-element="solid" nature="y">Lu<br>Lutetium<br>71</div>
-        <div class="grid-item" data-element="solid" nature="y">Hf<br>Hafnium<br>72</div>
-        <div class="grid-item" data-element="solid" nature="y">Ta<br>Tantalum<br>73</div>
-        <div class="grid-item" data-element="solid" nature="y">W<br>Tungsten<br>74</div>
-        <div class="grid-item" data-element="solid" nature="y">Re<br>Rhenium<br>75</div>
-        <div class="grid-item" data-element="solid" nature="y">Os<br>Osmium<br>76</div>
-        <div class="grid-item" data-element="solid" nature="y">Ir<br>Iridium<br>77</div>
-        <div class="grid-item" data-element="solid" nature="y">Pt<br>Platinum<br>78</div>
-        <div class="grid-item" data-element="solid" nature="y">Au<br>Gold<br>79</div>
-        <div class="grid-item" data-element="liquid" nature="y">Hg<br>Mercury<br>80</div>
-        <div class="grid-item" data-element="solid" nature="y">Tl<br>Thallium<br>81</div>
-        <div class="grid-item" data-element="solid" nature="y">Pb<br>Lead<br>82</div>
-        <div class="grid-item" data-element="solid" nature="y">Bi<br>Bismuth<br>83</div>
-        <div class="grid-item" data-element="solid" nature="y">Po<br>Polonium<br>84</div>
-        <div class="grid-item" data-element="solid" nature="y">At<br>Astatine<br>85</div>
-        <div class="grid-item" data-element="gas" nature="y">Rn<br>Radon<br>86</div>
-        <div class="grid-item" data-element="solid" nature="y">Fr<br>Francium<br>87</div>
-        <div class="grid-item" data-element="solid" nature="y">Ra<br>Radium<br>88</div>
-        <div class="grid-item" data-element="solid">f block 2<br>89-102</div>
-        <div class="grid-item" data-element="solid">Lr<br>Lawrencium<br>103</div>
-        <div class="grid-item" data-element="solid">Rf<br>Rutherfordium<br>104</div>
-        <div class="grid-item" data-element="solid">Db<br>Dubnium<br>105</div>
-        <div class="grid-item" data-element="solid">Sg<br>Seaborgium<br>106</div>
-        <div class="grid-item" data-element="solid">Bh<br>Bohrium<br>107</div>
-        <div class="grid-item" data-element="solid">Hs<br>Hassium<br>108</div>
-        <div class="grid-item" data-element="solid">Mt<br>Meitnerium<br>109</div>
-        <div class="grid-item" data-element="solid">Ds<br>Darmstadtium<br>110</div>
-        <div class="grid-item" data-element="solid">Rg<br>Roentgenium<br>111</div>
-        <div class="grid-item" data-element="solid">Cn<br>Copernicium<br>112</div>
-        <div class="grid-item" data-element="solid">Nh<br>Nihonium<br>113</div>
-        <div class="grid-item" data-element="solid">Fl<br>Flerovium<br>114</div>
-        <div class="grid-item" data-element="solid">Mc<br>Moscovium<br>115</div>
-        <div class="grid-item" data-element="solid">Lv<br>Livermorium<br>116</div>
-        <div class="grid-item" data-element="solid">Ts<br>Tennessine<br>117</div>
-        <div class="grid-item" data-element="solid">Og<br>Oganesson<br>118</div>
-        <div class="void"></div>
-        <div class="void"></div>
-        <div class="void"></div>
-        <div class="void"></div>
-        <div class="void"></div>
-        <div class="void"></div>
+        <div id="39" class="grid-item" data-element="solid" nature="y" melt=1799 boil=3203>Y<br>Yttrium<br>39</div>
+        <div id="40" class="grid-item" data-element="solid" nature="y" melt=2128 boil=4650>Zr<br>Zirconium<br>40</div>
+        <div id="41" class="grid-item" data-element="solid" nature="y" melt=2750 boil=5017>Nb<br>Niobium<br>41</div>
+        <div id="42" class="grid-item" data-element="solid" nature="y" melt=2896 boil=4912>Mo<br>Molybdenum<br>42</div>
+        <div id="43" class="grid-item" data-element="solid" nature="y" melt=2430 boil=4538>Tc<br>Technetium<br>43</div>
+        <div id="44" class="grid-item" data-element="solid" nature="y" melt=2607 boil=4423>Ru<br>Ruthenium<br>44</div>
+        <div id="45" class="grid-item" data-element="solid" nature="y" melt=2237 boil=3968>Rh<br>Rhodium<br>45</div>
+        <div id="46" class="grid-item" data-element="solid" nature="y" melt=1828 boil=3236>Pd<br>Palladium<br>46</div>
+        <div id="47" class="grid-item" data-element="solid" nature="y" melt=1245 boil=2483>Ag<br>Silver<br>47</div>
+        <div id="48" class="grid-item" data-element="solid" nature="y" melt=594 boil=1040>Cd<br>Cadmium<br>48</div>
+        <div id="49" class="grid-item" data-element="solid" nature="y" melt=430 boil=2345>In<br>Indium<br>49</div>
+        <div id="50" class="grid-item" data-element="solid" nature="y" melt=505 boil=2875>Sn<br>Tin<br>50</div>
+        <div id="51" class="grid-item" data-element="solid" nature="y" melt=905 boil=1908>Sb<br>Antimony<br>51</div>
+        <div id="52" class="grid-item" data-element="solid" nature="y" melt=723 boil=1261>Te<br>Tellurium<br>52</div>
+        <div id="53" class="grid-item" data-element="solid" nature="y" melt=387 boil=457>I<br>Iodine<br>53</div>
+        <div id="54" class="grid-item" data-element="gas" nature="y" melt=161 boil=165>Xe<br>Xenon<br>54</div>
+        <div id="55" class="grid-item" data-element="solid" nature="y" melt=302 boil=944>Cs<br>Caesium<br>55</div>
+        <div id="56" class="grid-item" data-element="solid" nature="y" melt=1000 boil=1910>Ba<br>Barium<br>56</div>
+        <div id="fblock1" class="grid-item" data-element="solid" nature="y">f block 1<br>57-70</div>
+        <div id="71" class="grid-item" data-element="solid" nature="y" melt=1925 boil=3675>Lu<br>Lutetium<br>71</div>
+        <div id="72" class="grid-item" data-element="solid" nature="y" melt=2506 boil=4876>Hf<br>Hafnium<br>72</div>
+        <div id="73" class="grid-item" data-element="solid" nature="y" melt=3290 boil=5731>Ta<br>Tantalum<br>73</div>
+        <div id="74" class="grid-item" data-element="solid" nature="y" melt=3695 boil=6203>W<br>Tungsten<br>74</div>
+        <div id="75" class="grid-item" data-element="solid" nature="y" melt=3459 boil=5869>Re<br>Rhenium<br>75</div>
+        <div id="76" class="grid-item" data-element="solid" nature="y" melt=3306 boil=5285>Os<br>Osmium<br>76</div>
+        <div id="77" class="grid-item" data-element="solid" nature="y" melt=2719 boil=4403>Ir<br>Iridium<br>77</div>
+        <div id="78" class="grid-item" data-element="solid" nature="y" melt=2041 boil=4098>Pt<br>Platinum<br>78</div>
+        <div id="79" class="grid-item" data-element="solid" nature="y" melt=1337 boil=3243>Au<br>Gold<br>79</div>
+        <div id="80" class="grid-item" data-element="liquid" nature="y" melt=234 boil=630>Hg<br>Mercury<br>80</div>
+        <div id="81" class="grid-item" data-element="solid" nature="y" melt=577 boil=1746>Tl<br>Thallium<br>81</div>
+        <div id="82" class="grid-item" data-element="solid" nature="y" melt=601 boil=2022>Pb<br>Lead<br>82</div>
+        <div id="83" class="grid-item" data-element="solid" nature="y" melt=545 boil=1837>Bi<br>Bismuth<br>83</div>
+        <div id="84" class="grid-item" data-element="solid" nature="y" melt=527 boil=1235>Po<br>Polonium<br>84</div>
+        <div id="85" class="grid-item" data-element="solid" nature="y" melt=575 boil=503>At<br>Astatine<br>85</div>
+        <div id="86" class="grid-item" data-element="gas" nature="y" melt=202 boil=212>Rn<br>Radon<br>86</div>
+        <div id="87" class="grid-item" data-element="solid" nature="y" melt=281 boil=890>Fr<br>Francium<br>87</div>
+        <div id="88" class="grid-item" data-element="solid" nature="y" melt=973 boil=2010>Ra<br>Radium<br>88</div>
+        <div id="fblock2" class="grid-item" data-element="solid">f block 2<br>89-102</div>
+        <div id="103" class="grid-item" data-element="solid" melt=1900 boil=>Lr<br>Lawrencium<br>103</div>
+        <div id="104" class="grid-item" data-element="solid" melt=2400 boil=>Rf<br>Rutherfordium<br>104</div>
+        <div id="105" class="grid-item" data-element="solid" melt=99999 boil=99999>Db<br>Dubnium<br>105</div>
+        <div id="106" class="grid-item" data-element="solid" melt=99999 boil=99999>Sg<br>Seaborgium<br>106</div>
+        <div id="107" class="grid-item" data-element="solid" melt=99999 boil=99999>Bh<br>Bohrium<br>107</div>
+        <div id="108" class="grid-item" data-element="solid" melt=99999 boil=99999>Hs<br>Hassium<br>108</div>
+        <div id="109" class="grid-item" data-element="solid" melt=99999 boil=99999>Mt<br>Meitnerium<br>109</div>
+        <div id="110" class="grid-item" data-element="solid" melt=99999 boil=99999>Ds<br>Darmstadtium<br>110</div>
+        <div id="111" class="grid-item" data-element="solid" melt=99999 boil=99999>Rg<br>Roentgenium<br>111</div>
+        <div id="112" class="grid-item" data-element="solid" melt=283 boil=>Cn<br>Copernicium<br>112</div>
+        <div id="113" class="grid-item" data-element="solid" melt=700 boil=1430>Nh<br>Nihonium<br>113</div>
+        <div id="114" class="grid-item" data-element="solid" melt=200 boil=380>Fl<br>Flerovium<br>114</div>
+        <div id="115" class="grid-item" data-element="solid" melt=670 boil=1400>Mc<br>Moscovium<br>115</div>
+        <div id="116" class="grid-item" data-element="solid" melt=637 boil=1035>Lv<br>Livermorium<br>116</div>
+        <div id="117" class="grid-item" data-element="solid" melt=623 boil=883>Ts<br>Tennessine<br>117</div>
+        <div id="118" class="grid-item" data-element="solid" melt=325 boil=450>Og<br>Oganesson<br>118</div>
         <div class="void"></div>
         <div class="void"></div>
         <div class="void"></div>
@@ -170,42 +174,48 @@
         <div class="void"></div>
         <div class="void"></div>
         <div class="void"></div>
-        
-        <div class="grid-item" data-element="solid" nature="y">La<br>Lanthanum<br>57</div>
-        <div class="grid-item" data-element="solid" nature="y">Ce<br>Cerium<br>58</div>
-        <div class="grid-item" data-element="solid" nature="y">Pr<br>Praseodymnium<br>59</div>
-        <div class="grid-item" data-element="solid" nature="y">Nd<br>Neodymium<br>60</div>
-        <div class="grid-item" data-element="solid" nature="y">Pm<br>Promethium<br>61</div>
-        <div class="grid-item" data-element="solid" nature="y">Sm<br>Samarium<br>62</div>
-        <div class="grid-item" data-element="solid" nature="y">Eu<br>Europium<br>63</div>
-        <div class="grid-item" data-element="solid" nature="y">Gd<br>Gadolinium<br>64</div>
-        <div class="grid-item" data-element="solid" nature="y">Tb<br>Terbium<br>65</div>
-        <div class="grid-item" data-element="solid" nature="y">Dy<br>Dysprosium<br>66</div>
-        <div class="grid-item" data-element="solid" nature="y">Ho<br>Holmium<br>67</div>
-        <div class="grid-item" data-element="solid" nature="y">Er<br>Erbium<br>68</div>
-        <div class="grid-item" data-element="solid" nature="y">Tm<br>Thulium<br>69</div>
-        <div class="grid-item" data-element="solid" nature="y">Yb<br>Ytterbium<br>70</div>
+        <div class="void"></div>
         <div class="void"></div>
         <div class="void"></div>
         <div class="void"></div>
         <div class="void"></div>
         <div class="void"></div>
         
+        <div id="57" class="grid-item" data-element="solid" nature="y" melt=1193 boil=3737>La<br>Lanthanum<br>57</div>
+        <div id="58" class="grid-item" data-element="solid" nature="y" melt=1068 boil=3716>Ce<br>Cerium<br>58</div>
+        <div id="59" class="grid-item" data-element="solid" nature="y" melt=1208 boil=3403>Pr<br>Praseodymnium<br>59</div>
+        <div id="60" class="grid-item" data-element="solid" nature="y" melt=1297 boil=3347>Nd<br>Neodymium<br>60</div>
+        <div id="61" class="grid-item" data-element="solid" nature="y" melt=1315 boil=3273>Pm<br>Promethium<br>61</div>
+        <div id="62" class="grid-item" data-element="solid" nature="y" melt=1345 boil=2173>Sm<br>Samarium<br>62</div>
+        <div id="63" class="grid-item" data-element="solid" nature="y" melt=1099 boil=1802>Eu<br>Europium<br>63</div>
+        <div id="64" class="grid-item" data-element="solid" nature="y" melt=1585 boil=3546>Gd<br>Gadolinium<br>64</div>
+        <div id="65" class="grid-item" data-element="solid" nature="y" melt=1629 boil=3396>Tb<br>Terbium<br>65</div>
+        <div id="66" class="grid-item" data-element="solid" nature="y" melt=1680 boil=2840>Dy<br>Dysprosium<br>66</div>
+        <div id="67" class="grid-item" data-element="solid" nature="y" melt=1734 boil=2873>Ho<br>Holmium<br>67</div>
+        <div id="68" class="grid-item" data-element="solid" nature="y" melt=1802 boil=3141>Er<br>Erbium<br>68</div>
+        <div id="69" class="grid-item" data-element="solid" nature="y" melt=1818 boil=2223>Tm<br>Thulium<br>69</div>
+        <div id="70" class="grid-item" data-element="solid" nature="y" melt=1097 boil=1469>Yb<br>Ytterbium<br>70</div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
+        <div class="void"></div>
         
-        <div class="grid-item" data-element="solid" nature="y">Ac<br>Actinium<br>89</div>
-        <div class="grid-item" data-element="solid" nature="y">Th<br>Thorium<br>90</div>
-        <div class="grid-item" data-element="solid" nature="y">Pa<br>Protactinium<br>91</div>
-        <div class="grid-item" data-element="solid" nature="y">U<br>Uranium<br>92</div>
-        <div class="grid-item" data-element="solid" nature="y">Np<br>Neptunium<br>93</div>
-        <div class="grid-item" data-element="solid" nature="y">Pu<br>Plutonium<br>94</div>
-        <div class="grid-item" data-element="solid">Am<br>Americium<br>95</div>
-        <div class="grid-item" data-element="solid">Cm<br>Curium<br>96</div>
-        <div class="grid-item" data-element="solid">Bk<br>Berkelium<br>97</div>
-        <div class="grid-item" data-element="solid">Cf<br>Californium<br>98</div>
-        <div class="grid-item" data-element="solid">Es<br>Einsteinium<br>99</div>
-        <div class="grid-item" data-element="solid">Fm<br>Fermium<br>100</div>
-        <div class="grid-item" data-element="solid">Md<br>Mendelevium<br>101</div>
-        <div class="grid-item" data-element="solid">No<br>Nobelium<br>102</div> 
+        
+        <div id="89" class="grid-item" data-element="solid" nature="y" melt=1323 boil=3471>Ac<br>Actinium<br>89</div>
+        <div id="90" class="grid-item" data-element="solid" nature="y" melt=2115 boil=5061>Th<br>Thorium<br>90</div>
+        <div id="91" class="grid-item" data-element="solid" nature="y" melt=1841 boil=4300>Pa<br>Protactinium<br>91</div>
+        <div id="92" class="grid-item" data-element="solid" nature="y" melt=1405 boil=4404>U<br>Uranium<br>92</div>
+        <div id="93" class="grid-item" data-element="solid" nature="y" melt=917 boil=4273>Np<br>Neptunium<br>93</div>
+        <div id="94" class="grid-item" data-element="solid" nature="y" melt=913 boil=3501>Pu<br>Plutonium<br>94</div>
+        <div id="95" class="grid-item" data-element="solid" melt=1449 boil=2880>Am<br>Americium<br>95</div>
+        <div id="96" class="grid-item" data-element="solid" melt=1613 boil=3383>Cm<br>Curium<br>96</div>
+        <div id="97" class="grid-item" data-element="solid" melt=1323 boil=2900>Bk<br>Berkelium<br>97</div>
+        <div id="98" class="grid-item" data-element="solid" melt=1173 boil=1743>Cf<br>Californium<br>98</div>
+        <div id="99" class="grid-item" data-element="solid" melt=1133 boil=1269>Es<br>Einsteinium<br>99</div>
+        <div id="100" class="grid-item" data-element="solid" melt=1800 boil=99999>Fm<br>Fermium<br>100</div>
+        <div id="101" class="grid-item" data-element="solid" melt=1100 boil=99999>Md<br>Mendelevium<br>101</div>
+        <div id="102" class="grid-item" data-element="solid" melt=1100 boil=99999>No<br>Nobelium<br>102</div> 
     </div>
 </body>
 <script src="periactive.js"></script>
